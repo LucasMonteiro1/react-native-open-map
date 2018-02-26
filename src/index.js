@@ -54,7 +54,7 @@ const choiceApp = (cancelText = 'cancel') => {
         <ActionSheetItem
           index={-1}
           key={-1}
-          text={'Cancel'}
+          text={cancelText}
           value={cancelText}
           showSelectedIcon={false}
           style={{ paddingTop: 10, paddingBottom: 10 }}
@@ -89,7 +89,7 @@ export const openMap = (options) => {
 
   const lat = parseFloat(options.latitude);
   const lng = parseFloat(options.longitude);
-  const title = (options.title) ? options.title : 'Open in Maps';
+  const title = (options.title) ? options.title : 'Location';
 
   return choiceApp(options.cancelText).then((app) => {
     const url = getUrl(app, lat, lng, title);
@@ -102,19 +102,18 @@ export const openMap = (options) => {
 
 const getUrl = (app, lat, lng, title) => {
   if (app.name === 'apple-maps') {
-    return `${app.prefixe}?ll=${lat},${lng}&q=${encodeURIComponent(title || 'Location')}`;
+    return `${app.prefixe}?ll=${lat},${lng}&q=${encodeURIComponent(title)}`;
   }
   if (app.name === 'google-maps') {
-    const location = (isIOS) ? `?api=1&ll=${lat},${lng}&q=%{encodeURIComponent(title || 'Location')}` : `?q=${lat},${lng}`;
+    const location = (isIOS) ? `?api=1&ll=${lat},${lng}&q=${encodeURIComponent(title)}` : `?q=${lat},${lng}`;
     return `${app.prefixe}${location}`;
   }
   if (app.name === 'citymapper') {
-    title = (title) ? `&endname=${encodeURIComponent(title)}` : '';
-    return `${app.prefixe}directions?endcoord=${lat},${lng}${title}`;
+    return `${app.prefixe}directions?endcoord=${lat},${lng}&endname=${encodeURIComponent(title)}`;
   }
   if (app.name === 'uber') {
-    title = (title) ? `&dropoff[nickname]=${encodeURIComponent(title)}` : '';
-    return `${app.prefixe}?action=setPickup&pickup=my_location&dropoff[latitude]=${lat}&dropoff[longitude]${lng}${title}`;
+    title = `&dropoff[nickname]=${encodeURIComponent(title)}`;
+    return `${app.prefixe}?action=setPickup&client_id=tDROEA84DI_9D2djgOt3L_JFCRAYTcvkB1m8RjO0&pickup=my_location&dropoff[latitude]=${lat}&dropoff[longitude]=${lng}${title}`;
   }
   if (app.name === 'lyft') {
     return `${app.prefixe}ridetype?id=lyft&destination[latitude]=${lat}&destination[longitude]=${lng}`;
@@ -126,7 +125,6 @@ const getUrl = (app, lat, lng, title) => {
     return `${app.prefixe}?ll=${lat},${lng}&navigate=yes`;
   }
   if (app.name === 'moovit') {
-    title = (title) ? `&dest_name=${encodeURIComponent(title)}` : '';
-    return `${app.prefixe}directions?dest_lat=${lat}&dest_lon${lng}`;
+    return `${app.prefixe}directions?dest_lat=${lat}&dest_lon${lng}&dest_name=${encodeURIComponent(title)}`;
   }
 };
