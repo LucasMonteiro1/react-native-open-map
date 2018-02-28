@@ -105,8 +105,7 @@ const getUrl = (app, lat, lng, title) => {
     return `${app.prefixe}?ll=${lat},${lng}&q=${encodeURIComponent(title)}`;
   }
   if (app.name === 'google-maps') {
-    const location = (isIOS) ? `?api=1&ll=${lat},${lng}&q=${encodeURIComponent(title)}` : `?q=${lat},${lng}`;
-    return `${app.prefixe}${location}`;
+    return `${app.prefixe}?q=${lat},${lng}`;
   }
   if (app.name === 'citymapper') {
     return `${app.prefixe}directions?endcoord=${lat},${lng}&endname=${encodeURIComponent(title)}`;
