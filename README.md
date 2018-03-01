@@ -1,2 +1,74 @@
-# react-native-open-map
+# React Native Open Map
+---
 Choose the application that will open the map
+
+## Currently supported apps:
+
+* Apple Maps – `apple-maps`
+* Google Maps – `google-maps`
+* Citymapper – `citymapper`
+* Uber – `uber`
+* Lyft – `lyft`
+* Navigon – `navigon`
+* The Transit App – `transit`
+* Waze – `waze`
+* Moovit - `moovit`
+
+## Installation
+
+```
+npm install --save react-native-open-map
+```
+```
+yarn add react-native-open-map
+```
+
+### A note about iOS 9+
+As of iOS 9, your app needs to provide the `LSApplicationQueriesSchemes` key inside
+Info.plist to specify the URL schemes with which the app can interact.
+
+Just put this in your Info.plist depending on which apps you'd like to support.
+Omitting these might mean that the library can't detect some of the maps apps installed by the user.
+
+```plist
+<key>LSApplicationQueriesSchemes</key>
+<array>
+    <string>comgooglemaps</string>
+    <string>citymapper</string>
+    <string>uber</string>
+    <string>lyft</string>
+    <string>navigon</string>
+    <string>transit</string>
+    <string>waze</string>
+    <string>moovit</string>
+</array>
+```
+## Props
+| Prop | Default | Type | Required |
+| --- | --- | --- | --- |
+| latitude | none | number/string | yes |
+| longitude | none | number/string | yes | null |
+| title |  "Location" | string | no |
+| cancelText | "Cancel" | string | no |
+
+## Usage
+
+```javascript
+import { openMap } from 'react-native-open-map';
+
+openMap({
+  latitude: 40.778721,
+  longitude: -73.968188,
+});
+```
+```javascript
+openMap({
+  latitude: 40.778721,
+  longitude: -73.968188,
+  title: 'Central Park',
+  cancelText: 'Close',
+});
+```
+
+## Credits
+This library is based on [react-native-map-link](https://github.com/includable/react-native-map-link).
