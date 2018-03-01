@@ -1,6 +1,6 @@
 {
   "name": "react-native-open-map",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Choose the application that will open the map",
   "main": "src/index.js",
   "repository": {

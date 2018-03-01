@@ -27,7 +27,7 @@ const isAppInstalled = (app) => {
   });
 };
 
-const choiceApp = (cancelText = 'cancel') => {
+const choiceApp = (cancelText = 'Cancel') => {
   const promises = apps.map((app) => isAppInstalled(app.prefixe).then((ret) => (ret) ? app : null));
 
   return Promise.all(promises).then((returnPromises) => {
@@ -46,7 +46,7 @@ const choiceApp = (cancelText = 'cancel') => {
           value={app}
           showSelectedIcon={false}
           icon={app.icon}
-          style={{ paddingTop: 10, paddingBottom: 10 }}
+          style={{ paddingTop: 12, paddingBottom: 12 }}
         />
       ));
 
@@ -57,7 +57,7 @@ const choiceApp = (cancelText = 'cancel') => {
           text={cancelText}
           value={cancelText}
           showSelectedIcon={false}
-          style={{ paddingTop: 10, paddingBottom: 10 }}
+          style={{ paddingTop: 12, paddingBottom: 12, alignSelf: 'center' }}
         />
       );
 
