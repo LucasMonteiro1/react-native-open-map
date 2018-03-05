@@ -1,6 +1,6 @@
 {
   "name": "react-native-open-map",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "Choose the application that will open the map",
   "main": "src/index.js",
   "repository": {
@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "prop-types": "^15.5.10",
-    "react-native-action-sheet-component": "0.0.34"
+    "react-native-action-sheet-component": "0.0.37"
   },
   "homepage": "https://github.com/LucasMonteiro1/react-native-open-map#readme"
 }

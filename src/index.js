@@ -58,6 +58,7 @@ const choiceApp = (cancelText = 'Cancel') => {
           value={cancelText}
           showSelectedIcon={false}
           style={{ paddingTop: 12, paddingBottom: 12, alignSelf: 'center' }}
+          textStyle={{ color: '#0066ff' }}
         />
       );
 
