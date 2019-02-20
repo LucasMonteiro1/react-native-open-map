@@ -1,6 +1,6 @@
 {
   "name": "react-native-open-map",
-  "version": "1.9.1",
+  "version": "2.0.0",
   "description": "Choose the application that will open the map",
   "main": "src/index.js",
   "repository": {
@@ -25,17 +25,17 @@
     "url": "https://github.com/LucasMonteiro1/react-native-open-map/issues"
   },
   "peerDependencies": {
-    "react": "16.0.0"
+    "react": "16.8.2"
   },
   "devDependencies": {
-    "eslint": "^4.18.1",
-    "eslint-plugin-import": "^2.9.0",
-    "eslint-plugin-react": "^7.7.0",
-    "react": "16.0.0",
-    "react-native": "^0.51.0"
+    "eslint": "^5.14.1",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-react": "^7.12.4",
+    "react": "16.8.2",
+    "react-native": "^0.58.5"
   },
   "dependencies": {
-    "prop-types": "^15.5.10",
+    "prop-types": "^15.7.2",
     "react-native-action-sheet-component": "0.0.34"
   },
   "homepage": "https://github.com/LucasMonteiro1/react-native-open-map#readme"
