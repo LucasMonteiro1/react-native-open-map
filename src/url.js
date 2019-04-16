@@ -1,16 +1,3 @@
-/*global Promise*/
-import { Linking } from 'react-native';
-
-export const isAppInstalled = (app) => {
-  return new Promise((resolve) => {
-    Linking.canOpenURL(app).then((result) => {
-      resolve(!!result);
-    }).catch(() => {
-      resolve(false);
-    });
-  });
-};
-
 export const getUrl = (app, lat, lng, title) => {
   if (app.name === 'apple-maps') {
     return `${app.prefixe}?ll=${lat},${lng}&q=${encodeURIComponent(title)}`;

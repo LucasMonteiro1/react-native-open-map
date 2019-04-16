@@ -49,26 +49,30 @@ Omitting these might mean that the library can't detect some of the maps apps in
 | Prop | Default | Type | Required |
 | --- | --- | --- | --- |
 | latitude | none | number/string | yes |
-| longitude | none | number/string | yes | null |
+| longitude | none | number/string | yes |
 | title |  "Location" | string | no |
 | cancelText | "Cancel" | string | no |
+| actionSheetTitle | none | string | no |
+| actionSheetMessage | none | string | no |
 
 ## Usage
 
 ```javascript
-import { openMap } from 'react-native-open-map';
+import OpenMap from "react-native-open-map";
 
-openMap({
+OpenMap.show({
   latitude: 40.778721,
   longitude: -73.968188,
 });
 ```
 ```javascript
-openMap({
-  latitude: 40.778721,
+OpenMap.show({
+  alatitude: 40.778721,
   longitude: -73.968188,
   title: 'Central Park',
   cancelText: 'Close',
+  actionSheetTitle: 'Chose app',
+  actionSheetMessage: 'Available applications '
 });
 ```
 

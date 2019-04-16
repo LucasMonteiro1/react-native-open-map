@@ -1,16 +1,21 @@
 import React from 'react';
 import RootSiblings from 'react-native-root-siblings';
-import OpenMap from './OpenMap';
+import ActionSheet from './ActionSheet';
+import { getApps } from './Apps';
 
-export default class ActionSheetManager {
+class OpenMapManager {
   constructor() {
     this.props = [];
+
+    getApps().then((apps) => {
+      this.props.apps = apps;
+    });
   }
 
   setCurrent(props, callback = () => {}) {
     if (!props) return;
 
-    this.currentOpenMap = new RootSiblings(<OpenMap {...props} />);
+    this.currentManager = new RootSiblings(<ActionSheet {...props} />);
   }
 
   create(props, callback = () => {}) {
@@ -20,10 +25,12 @@ export default class ActionSheetManager {
 
   update = (props) => {
     this.props[this.props.length - 1] = props;
-    this.currentActionSheet.update(<ActionSheet {...props} />);
+    this.currentManager.update(<ActionSheet {...props} />);
   }
 
-  openMap = (options) => {
-    this.create(props);
+  show = (options) => {
+    this.create({ ...this.props, ...options });
   }
 }
+
+export default new OpenMapManager();
