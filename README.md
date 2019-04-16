@@ -16,6 +16,10 @@ Choose the application that will open the map
 * Waze – `waze`
 * Moovit - `moovit`
 
+## Try it out
+You can try out the [Open Map Example
+](https://expo.io/@lucasmonteiro1/open-map-example) app to get a tease of the functionalities of this lib.
+
 ## Installation
 
 ```
