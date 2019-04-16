@@ -71,7 +71,7 @@ OpenMap.show({
 ```
 ```javascript
 OpenMap.show({
-  alatitude: 40.778721,
+  latitude: 40.778721,
   longitude: -73.968188,
   title: 'Central Park',
   cancelText: 'Close',
