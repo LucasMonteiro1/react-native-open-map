@@ -7,7 +7,7 @@ stages:
 before_script:
   - npm install
 
-.prepare:
+prepare:
   stage: prepare
   script:
     - npm run lint
