@@ -25,14 +25,14 @@
     "url": "https://github.com/LucasMonteiro1/react-native-open-map/issues"
   },
   "peerDependencies": {
-    "react": "16.8.2"
+    "react": "16.8.6"
   },
   "devDependencies": {
-    "eslint": "^5.14.1",
-    "eslint-plugin-import": "^2.16.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-import": "^2.17.1",
     "eslint-plugin-react": "^7.12.4",
-    "react": "16.8.2",
-    "react-native": "^0.58.5"
+    "react": "16.8.6",
+    "react-native": "^0.59.4"
   },
   "dependencies": {
     "prop-types": "^15.7.2",
