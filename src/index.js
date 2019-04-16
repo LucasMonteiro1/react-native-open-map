@@ -1,7 +1,7 @@
 /*global Promise*/
 import React from 'react';
 import { Platform, Linking } from 'react-native';
-import ActionSheetManager, { ActionSheetItem } from 'react-native-action-sheet-component';
+import ActionSheetManager, { ActionSheetItem } from 'react-native-next-action-sheet';
 import { GoogleMaps, AppleMaps, CityMapper, Uber, Lyft, Transit, Waze, Moovit } from './img';
 
 const isIOS = (Platform.OS === 'ios');
