@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Linking, View, Text } from 'react-native';
+import { Linking } from 'react-native';
 import ActionSheet from 'react-native-actionsheet';
-import { getApps } from './Apps';
 import { getUrl } from './url';
 
 export default class OpenMap extends Component {

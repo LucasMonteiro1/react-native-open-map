@@ -1,3 +1,4 @@
+/*global Promise*/
 import { Platform, Linking } from 'react-native';
 import { GoogleMaps, AppleMaps, CityMapper, Uber, Lyft, Transit, Waze, Moovit } from './img';
 
@@ -28,4 +29,4 @@ export const getApps = () => {
   return Promise.all(promises).then((returnPromises) => {
     return returnPromises.filter((app) => (app));
   });
-}
+};
