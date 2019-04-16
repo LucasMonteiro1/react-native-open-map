@@ -1,5 +1,6 @@
 // /*global Promise*/
 import React, { Component } from 'react';
+import { View, Text } from 'react-native';
 // import { Linking } from 'react-native';
 import ActionSheet from 'react-native-actionsheet';
 // import apps from './apps';
@@ -81,7 +82,7 @@ export const openMap = (options) => {
 */
 export default class OpenMap extends Component {
   showActionSheet = () => {
-    this.ActionSheet.show()
+    this.ActionSheet.show();
   }
 
   render() {
@@ -89,7 +90,7 @@ export default class OpenMap extends Component {
       <View>
         <Text onPress={this.showActionSheet}>Open ActionSheet</Text>
         <ActionSheet
-          ref={o => this.ActionSheet = o}
+          ref={(ref) => this.ActionSheet = ref}
           title={'Which one do you like ?'}
           options={['Apple', 'Banana', 'cancel']}
           cancelButtonIndex={2}
