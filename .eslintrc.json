@@ -1,4 +1,17 @@
 {
+  "parser": "babel-eslint",
+  "plugins": [
+    "babel",
+    "react",
+    "react-native",
+    "jsx-a11y",
+    "import",
+    "module-resolver"
+  ],
+  "extends" : [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
@@ -6,18 +19,26 @@
       "jsx": true
     }
   },
-  "plugins": [
-    "react",
-    "import"
-  ],
-  "extends" : [
-    "eslint:recommended",
-    "plugin:react/recommended"
-  ],
   "settings": {
+    "import/resolver": {
+      "babel-module": {},
+      "node": {
+        "extensions": [".js", ".ios.js", ".android.js", ".json"]
+      }
+    },
     "react": {
       "version": "16.6.3"
     }
+  },
+  "globals": {
+    "__filename": false,
+    "__DEV__": false,
+    "Promise": false,
+    "fetch": false,
+    "setInterval": false,
+    "setTimeout": false,
+    "FormData": false,
+    "navigator": false
   },
   "rules": {
     "indent": ["error", 2, { "SwitchCase": 1 }],
@@ -57,6 +78,10 @@
     "react/prefer-stateless-function": 2,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-no-duplicate-props": 2,
-    "react/prop-types": [1, { "skipUndeclared": true }]
+    "react/prop-types": [1, { "skipUndeclared": true }],
+    "react-native/no-unused-styles": 2,
+    "react-native/split-platform-components": 2,
+    "react-native/no-inline-styles": 2,
+    "module-resolver/use-alias": 2
   }
 }
