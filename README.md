@@ -1,5 +1,5 @@
 # React Native Open Map
-[![npm version](https://badge.fury.io/js/react-native-open-map.svg)](https://badge.fury.io/js/react-native-open-map) [![npm downloads](https://img.shields.io/npm/dt/react-native-open-map.svg)](https://npm-stat.com/charts.html?package=react-native-open-map)  
+[![npm version](https://badge.fury.io/js/react-native-open-map.svg)](https://badge.fury.io/js/react-native-open-map) [![npm downloads](https://img.shields.io/npm/dt/react-native-open-map.svg)](https://npm-stat.com/charts.html?package=react-native-open-map) [![Publish Package](https://github.com/LucasMonteiro1/react-native-open-map/workflows/Publish%20Package/badge.svg?branch=master&event=push)](https://github.com/LucasMonteiro1/react-native-open-map/actions)  
 [![NPM](https://nodei.co/npm/react-native-open-map.png?downloads=true)](https://nodei.co/npm/react-native-open-map/)
 ---
 Choose the application that will open the map
