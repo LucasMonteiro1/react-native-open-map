@@ -31,7 +31,6 @@ jobs:
   publish-expo:
     needs: prepare
     runs-on: ubuntu-latest
-    working-directory: ./example
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -43,4 +42,6 @@ jobs:
           expo-username: ${{ secrets.EXPO_CLI_USERNAME }}
           expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
       - run: npm install
+        working-directory: ./example
       - run: expo publish
+        working-directory: ./example
