@@ -1,16 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
-import OpenMap from "react-native-open-map";
+import OpenMap from 'react-native-open-map';
 
-export default class App extends React.Component {
-  openA = () => {
+export default function App() {
+  const openA = () => {
     OpenMap.show({
       latitude: 40.778721,
       longitude: -73.968188,
     });
   }
 
-  openB = () => {
+  const openB = () => {
     OpenMap.show({
       alatitude: 40.778721,
       longitude: -73.968188,
@@ -21,22 +21,20 @@ export default class App extends React.Component {
     });
   }
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Chose</Text>
+  return (
+    <View style={styles.container}>
+      <Text>React Native Open Map</Text>
 
-        <TouchableHighlight onPress={this.openA} style={styles.button}>
-          <Text>A</Text>
-        </TouchableHighlight>
+      <TouchableHighlight onPress={openA} style={styles.button}>
+        <Text>A</Text>
+      </TouchableHighlight>
 
-        <TouchableHighlight onPress={this.openB} style={styles.button}>
-          <Text>B</Text>
-        </TouchableHighlight>
-      </View>
-    );
-  }
-}
+      <TouchableHighlight onPress={openB} style={styles.button}>
+        <Text>B</Text>
+      </TouchableHighlight>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
